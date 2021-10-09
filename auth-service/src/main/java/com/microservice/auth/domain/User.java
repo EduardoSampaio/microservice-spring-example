@@ -30,9 +30,9 @@ public class User implements Serializable {
 	@Column(name = "id")
 	private UUID id;
 
-	@Column(name = "firstname", length = 30, nullable = false)
+	@Column(name = "username", length = 30, nullable = false)
 	@Setter
-	private String firstname;
+	private String username;
 
 	@Column(name = "email", length = 30, nullable = false)
 	@Setter
