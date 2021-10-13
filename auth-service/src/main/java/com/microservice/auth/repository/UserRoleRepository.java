@@ -8,5 +8,4 @@ import com.microservice.auth.domain.UserRoleId;
 
 @Repository
 public interface UserRoleRepository extends JpaRepository<UserRole, UserRoleId> {
-
 }

@@ -21,6 +21,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -31,49 +32,38 @@ public class User implements Serializable {
 	private UUID id;
 
 	@Column(name = "username", length = 30, nullable = false)
-	@Setter
 	private String username;
 
 	@Column(name = "email", length = 30, nullable = false)
-	@Setter
 	private String email;
 
-	@Column(name = "password", length = 30, nullable = false)
-	@Setter
+	@Column(name = "password", length = 100, nullable = false)
 	private String password;
 
 	@Column(name = "phonenumber", length = 30, nullable = true)
-	@Setter
 	private String phoneNumber;
 
 	@Column(name = "tokenaccess", length = 30, nullable = true)
-	@Setter
 	private String tokenAccess;
 
 	@Column(name = "deviceaccess", length = 50, nullable = true)
-	@Setter
 	private String deviceAccess;
 
 	@Column(name = "lastaccess", columnDefinition = "TIMESTAMP")
-	@Setter
 	private LocalDateTime lastAccess;
 
 	@Column(name = "createdat", columnDefinition = "TIMESTAMP")
 	private LocalDateTime createdAt;
 
 	@Column(name = "updatedat", columnDefinition = "TIMESTAMP")
-	@Setter
 	private LocalDateTime updatedAt;
 
 	@Column(name = "twofactoryauthentication", nullable = true)
-	@Setter
 	private boolean twoFactoryAuthentication;
 
 	@Column(name = "isactive", nullable = true)
-	@Setter
 	private boolean isActive;
 
 	@Column(name = "islocked", nullable = true)
-	@Setter
 	private boolean isLocked;
 }

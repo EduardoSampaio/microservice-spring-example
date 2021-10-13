@@ -6,16 +6,17 @@ import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Builder;
 
+@Builder
 public class JwtUser implements UserDetails, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private final String id;
-	private final String username;
-	private final String password;
-	private final Collection<? extends GrantedAuthority> authorities;
+	private String id;
+	private String username;
+	private String password;
+	private Collection<? extends GrantedAuthority> authorities;
 	
 	
 	public JwtUser(String id, String username, String password, Collection<? extends GrantedAuthority> authorities) {
@@ -30,12 +31,9 @@ public class JwtUser implements UserDetails, Serializable {
 		return authorities;
 	}
 
-
-	@JsonIgnore
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return password;
 	}
 
 	@Override
@@ -47,25 +45,19 @@ public class JwtUser implements UserDetails, Serializable {
 		return id;
 	}
 
-	@JsonIgnore
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	@JsonIgnore
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	@JsonIgnore
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
