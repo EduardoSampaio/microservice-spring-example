@@ -1,4 +1,4 @@
-package com.microservice.auth.security.jwt;
+package com.microservice.auth.service.impl;
 
 import java.util.Optional;
 
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.microservice.auth.domain.User;
 import com.microservice.auth.repository.UserRepository;
+import com.microservice.auth.security.jwt.JwtUser;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{

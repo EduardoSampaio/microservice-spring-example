@@ -1,4 +1,4 @@
-package com.microservice.auth.security.jwt;
+package com.microservice.auth.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

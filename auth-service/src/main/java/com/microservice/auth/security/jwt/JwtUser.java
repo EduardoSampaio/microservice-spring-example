@@ -1,20 +1,22 @@
 package com.microservice.auth.security.jwt;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Builder;
 
 @Builder
-public class JwtUser implements UserDetails, Serializable {
+public class JwtUser implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 	
 	private String id;
 	private String username;
+	@JsonIgnore
 	private String password;
 	private Collection<? extends GrantedAuthority> authorities;
 	
