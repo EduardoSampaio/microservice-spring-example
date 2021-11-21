@@ -53,28 +53,6 @@ create table users_roles(
 );
 
 
-create table claims(
-	claimId integer not null,
-	name varchar(30) not null,
-	read boolean not null,
-	write boolean not null,
-	execute boolean not null,
-	primary key (claimId)
-);
-
-CREATE SEQUENCE sq_claims
-INCREMENT 1
-START 1;
-
-create table roles_claims(
-	claimId integer not null,
-	roleId integer not null,
-	primary KEY(roleId,claimId),
-	constraint fk_role_claim foreign key(roleId) references roles(roleId),
-	constraint fk_claim_role foreign key(claimId) references claims(claimId)
-);
-
-
 select * from users u where u.username = 'admin';
 delete from users_roles;
 delete from users;
@@ -89,7 +67,10 @@ insert into ROLES (roleid ,"name") VALUES(nextval('sq_roles'), 'MANAGER')
 insert into ROLES (roleid ,"name") VALUES(nextval('sq_roles'), 'ADMIN')
 insert into ROLES (roleid ,"name") VALUES(nextval('sq_roles'), 'ROOT')
 
-INSERT into users_roles (userId,roleId) VALUES('a70d52bf-9a68-4608-89ef-ff960ed441c9',1);
+INSERT into users_roles (userId,roleId) VALUES('b6ff5bad-932e-4307-ac23-5f36ebe13366',1);
 INSERT into users_roles (userId,roleId) VALUES('a70d52bf-9a68-4608-89ef-ff960ed441c9',2);
 INSERT into users_roles (userId,roleId) VALUES('a70d52bf-9a68-4608-89ef-ff960ed441c9',3);
+
+select  * from users;
+select * from roles;
 

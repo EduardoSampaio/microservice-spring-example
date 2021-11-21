@@ -1,12 +1,14 @@
 package com.microservice.auth.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -35,4 +37,7 @@ public class Role implements Serializable {
 	@Column(name = "name", length = 30)
 	@Setter
 	private String name;
+	
+	@OneToMany(mappedBy = "role")
+	private Set<UserRole> userRoles;
 }

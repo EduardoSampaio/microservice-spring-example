@@ -2,6 +2,7 @@ package com.microservice.auth.domain;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -66,4 +68,7 @@ public class User implements Serializable {
 
 	@Column(name = "islocked", nullable = true)
 	private boolean isLocked;
+	
+	@OneToMany(mappedBy = "user")
+	private Set<UserRole> userRoles;
 }
