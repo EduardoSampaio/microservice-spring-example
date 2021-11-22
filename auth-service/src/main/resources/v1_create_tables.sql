@@ -68,8 +68,8 @@ insert into ROLES (roleid ,"name") VALUES(nextval('sq_roles'), 'ADMIN')
 insert into ROLES (roleid ,"name") VALUES(nextval('sq_roles'), 'ROOT')
 
 INSERT into users_roles (userId,roleId) VALUES('b6ff5bad-932e-4307-ac23-5f36ebe13366',1);
-INSERT into users_roles (userId,roleId) VALUES('a70d52bf-9a68-4608-89ef-ff960ed441c9',2);
-INSERT into users_roles (userId,roleId) VALUES('a70d52bf-9a68-4608-89ef-ff960ed441c9',3);
+INSERT into users_roles (userId,roleId) VALUES('b6ff5bad-932e-4307-ac23-5f36ebe13366',2);
+INSERT into users_roles (userId,roleId) VALUES('b6ff5bad-932e-4307-ac23-5f36ebe13366',3);
 
 select  * from users;
 select * from roles;
