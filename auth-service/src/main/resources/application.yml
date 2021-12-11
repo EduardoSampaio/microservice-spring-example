@@ -6,11 +6,11 @@ server:
   port: 9000
 spring:
   application:
-    name: auth
+    name: api-auth
   datasource:
     password: ''
-    url: ${DB_URL}
-    username: ${DB_USER}
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
   jpa:
     hibernate:
       ddl-auto: none
@@ -18,5 +18,11 @@ spring:
     banner-mode: 'off'
 
 jwt:
-   secret: ${JWT_SECRET}
+   secret: 1234
    expiration: 604800
+   
+   
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

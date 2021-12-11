@@ -1,0 +1,17 @@
+logging:
+  level:
+    org:
+      springframework: ERROR
+server:
+  port: 9001
+  
+spring:
+  application:
+    name: gateway
+  main:
+    banner-mode: 'off'
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
